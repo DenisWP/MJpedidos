@@ -67,7 +67,7 @@
         android:inputType="textPersonName"
         android:hint="CEP"
         android:ems="10"
-        android:id="@+id/edtCEp" />
+        android:id="@+id/edtCep" />
 
     <EditText
         android:layout_width="match_parent"
