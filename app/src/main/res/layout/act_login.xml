@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/act_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.deniswilson.mjpedidos.Login"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#F0FFF0">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Usuário"
+        android:ems="10"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/edtUsuario" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Senha"
+        android:ems="10"
+        android:layout_below="@+id/edtUsuario"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/edtSenha" />
+
+    <Button
+        android:text="Entrar"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnEntrar"
+        android:background="#66CDAA" />
+
+    <TextView
+        android:text="Criar uma conta. "
+        android:layout_width="match_parent"
+        android:id="@+id/txtCriar"
+        android:gravity="center"
+        android:layout_height="30dp"
+        android:textSize="17dp"
+        android:textColor="@android:color/black" />
+
+</LinearLayout>
