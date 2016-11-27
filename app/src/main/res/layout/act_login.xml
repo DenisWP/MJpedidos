@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Usuário"
+        android:hint="Usuário"
         android:ems="10"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
@@ -27,7 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Senha"
+        android:hint="Senha"
         android:ems="10"
         android:layout_below="@+id/edtUsuario"
         android:layout_centerHorizontal="true"
@@ -38,12 +38,13 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:id="@+id/btnEntrar"
-        android:background="#66CDAA" />
+        android:background="#66CDAA"
+        android:onClick="Logar"/>
 
     <TextView
         android:text="Criar uma conta. "
         android:layout_width="match_parent"
-        android:id="@+id/txtCriar"
+        android:id="@+id/txvCriar"
         android:gravity="center"
         android:layout_height="30dp"
         android:textSize="17dp"

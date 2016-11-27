@@ -2,6 +2,7 @@ package com.example.deniswilson.mjpedidos;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -17,7 +18,6 @@ public class TelaCadastro extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tela_cadastro);
 
-
         nome = (EditText) findViewById(R.id.edtNome);
         telefone = (EditText) findViewById(R.id.edtTel);
         endereço = (EditText) findViewById(R.id.edtLongradouro);
@@ -29,9 +29,5 @@ public class TelaCadastro extends AppCompatActivity {
 
         salvar = (Button) findViewById(R.id.btnSalvar);
         cancelar = (Button) findViewById(R.id.btnCancelar);
-
-
-
-
     }
 }
