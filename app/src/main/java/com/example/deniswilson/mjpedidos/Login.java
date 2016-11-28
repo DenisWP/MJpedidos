@@ -48,7 +48,7 @@ public class Login extends AppCompatActivity {
                 if (usuario.isEmpty() || senha.isEmpty()){
                     Toast.makeText(getApplicationContext(),"Preencha todos os campos !", Toast.LENGTH_LONG).show();
                 }else{
-                    url = "http://localhost/login.php";
+                    url = "http://192.168.0.102/login.php";
                     parametros = "usuario" + usuario + "senha" + senha;
 
                     new Dados().execute(url);
