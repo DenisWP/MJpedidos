@@ -33,51 +33,63 @@ public class Login extends AppCompatActivity {
         edtSenha = (EditText) findViewById(R.id.edtSenha);
         btnEntrar = (Button) findViewById(R.id.btnEntrar);
         txvCriar = (TextView) findViewById(R.id.txvCriar);
-    }
 
-    public void Logar(View view){
-        /*Verificando estado da RED (Fonte: Android Developers*/
-        ConnectivityManager connMgr = (ConnectivityManager)
-                getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
-        if (networkInfo != null && networkInfo.isConnected()) {
+        txvCriar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent telacadastro = new Intent(Login.this, TelaCadastro.class);
+                startActivity(telacadastro);
+            }
+        });
 
-                String usuario = edtUsuario.getText().toString();
-                String senha = edtSenha.getText().toString();
+        /*-------------------------------------------- Botão Entrar --------------------------------- */
+        btnEntrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                /*Verificando estado da RED (Fonte: Android Developers*/
+                ConnectivityManager connMgr = (ConnectivityManager)
+                        getSystemService(Context.CONNECTIVITY_SERVICE);
+                NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+                if (networkInfo != null && networkInfo.isConnected()) {
 
-                if (usuario.isEmpty() || senha.isEmpty()){
-                    Toast.makeText(getApplicationContext(),"Preencha todos os campos !", Toast.LENGTH_LONG).show();
-                }else{
-                    url = "http://192.168.0.102/login.php";
-                    parametros = "usuario" + usuario + "senha" + senha;
+                    String usuario = edtUsuario.getText().toString();
+                    String senha = edtSenha.getText().toString();
 
-                    new Dados().execute(url);
+                    if (usuario.isEmpty() || senha.isEmpty()){
+                        Toast.makeText(getApplicationContext(),"Preencha todos os campos !", Toast.LENGTH_LONG).show();
+                    }else{
+                        /*Montando a url, para realização da conexão*/
+                        url = "http://192.168.0.101/mjpedidos/login.php";
+                        parametros = "nome_usuario=" + usuario + "&senha_usuario=" + senha;
+
+                        new Dados().execute(url);
+                    }
+                } else {
+                    Toast.makeText(getApplicationContext(),"Não há conexão !", Toast.LENGTH_LONG).show();
                 }
-        } else {
-            Toast.makeText(getApplicationContext(),"Não há conexão !", Toast.LENGTH_LONG).show();
-        }
+            }
+        });
 
     }
+
 
     private class Dados extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... urls) {
-
-            // params comes from the execute() call: params[0] is the url.
-
-                return Conexao.postDados(urls[0], parametros);
+            return Conexao.postDados(urls[0], parametros);
 
         }
-        // onPostExecute displays the results of the AsyncTask.
+
         @Override
         protected void onPostExecute(String resultado) {
-            if (resultado.contains("Login realizado com sucesso")){
+            if (resultado.contains("login_correto")) {
                 Intent telacadastro = new Intent(Login.this, TelaCadastro.class);
                 startActivity(telacadastro);
-                }else{
-                    Toast.makeText(getApplicationContext(),"Usuário ou senha incorretos !", Toast.LENGTH_LONG).show();
-                }
+            } else {
+                Toast.makeText(getApplicationContext(), "Usuário ou senha incorretos !", Toast.LENGTH_LONG).show();
             }
+        }
+
         }
 
         @Override
@@ -85,7 +97,7 @@ public class Login extends AppCompatActivity {
             super.onPause();
             finish();
         }
-    }
+}
 
 
 

@@ -38,8 +38,7 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:id="@+id/btnEntrar"
-        android:background="#66CDAA"
-        android:onClick="Logar"/>
+        android:background="#66CDAA"/>
 
     <TextView
         android:text="Criar uma conta. "

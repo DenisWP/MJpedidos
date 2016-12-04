@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
@@ -39,11 +40,9 @@ public class Conexao {
             * Enviando e capturando dados.
             *
             * */
-
-            DataOutputStream dataOutputStream = new DataOutputStream(connection.getOutputStream());
-            dataOutputStream.writeBytes(parametrosUsuario);
-            dataOutputStream.flush();
-            dataOutputStream.close();
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(connection.getOutputStream(), "UTF-8");
+            outputStreamWriter.write(parametrosUsuario);
+            outputStreamWriter.flush();
 
             /*Obtendo informações*/
 
