@@ -60,7 +60,7 @@ public class Login extends AppCompatActivity {
                     }else{
                         /*Montando a url, para realização da conexão*/
                         url = "http://192.168.0.101/mjpedidos/login.php";
-                        parametros = "nome_usuario=" + usuario + "&senha_usuario=" + senha;
+                        parametros = "?nome_usuario=" +usuario+ "&senha_usuario=" +senha;
 
                         new Dados().execute(url);
                     }
@@ -90,7 +90,7 @@ public class Login extends AppCompatActivity {
             }
         }
 
-        }
+    }
 
         @Override
         protected void onPause(){

@@ -25,6 +25,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
+        android:hint="Senha"
+        android:ems="10"
+        android:id="@+id/edtSenha" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
         android:hint="Telefone"
         android:ems="10"
         android:id="@+id/edtTel" />
