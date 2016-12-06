@@ -59,8 +59,10 @@ public class Login extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(),"Preencha todos os campos !", Toast.LENGTH_LONG).show();
                     }else{
                         /*Montando a url, para realização da conexão*/
-                        url = "http://192.168.0.101/mjpedidos/login.php";
-                        parametros = "?nome_usuario=" +usuario+ "&senha_usuario=" +senha;
+                        url = "http://192.168.0.103/mjpedidos/login.php?nome="+usuario+"&senha="+senha;
+                        parametros = "nome=" + usuario + "&senha=" + senha;
+
+                       // Toast.makeText(getApplicationContext(),"->" +url+ "" +parametros, Toast.LENGTH_LONG).show();
 
                         new Dados().execute(url);
                     }

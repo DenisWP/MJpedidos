@@ -31,10 +31,8 @@ public class Conexao {
 
             /*Desabilitando cache*/
             connection.setUseCaches(false);
-
             connection.setDoInput(true);//habilitando a entrada e saida de dados.
             connection.setDoOutput(true);
-
 
             /*
             * Enviando e capturando dados.
