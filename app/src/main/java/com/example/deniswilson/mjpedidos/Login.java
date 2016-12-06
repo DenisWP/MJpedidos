@@ -85,7 +85,7 @@ public class Login extends AppCompatActivity {
         @Override
         protected void onPostExecute(String resultado) {
             if (resultado.contains("login_correto")) {
-                Intent telacadastro = new Intent(Login.this, TelaCadastro.class);
+                Intent telacadastro = new Intent(Login.this, ListarProdutos.class);
                 startActivity(telacadastro);
             } else {
                 Toast.makeText(getApplicationContext(), "Usuário ou senha incorretos !", Toast.LENGTH_LONG).show();

@@ -106,7 +106,22 @@ public class TelaCadastro extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String resultado){
+            if(resultado.contains("nome_erro")){
+                Toast.makeText(getApplicationContext(), " Já existe um usuário !", Toast.LENGTH_LONG).show();
+            }else if (resultado.contains("registro_ok")) {
+                Toast.makeText(getApplicationContext(), "Cadastro realizado com sucesso !", Toast.LENGTH_LONG).show();
+                Intent telacadastro = new Intent(TelaCadastro.this, Login.class);
+                startActivity(telacadastro);
+            } else {
+                Toast.makeText(getApplicationContext(), "Não foi possível cadastrar !", Toast.LENGTH_LONG).show();
+            }
         }
 
+    }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        finish();
     }
 }
