@@ -19,7 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".TelaCadastro" />
-        <activity android:name=".ListarProdutos"></activity>
+        <activity android:name=".ListarProdutos" />
+        <activity android:name=".Comprar"></activity>
     </application>
 
 </manifest>

@@ -60,7 +60,7 @@ public class Parser extends AsyncTask <Void, Integer, Integer> {
             list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                   // Snackbar.make(view,players.get(position),Snackbar.LENGTH_SHORT).show();
+                    //Snackbar.make(view,players.get(position),Snackbar.LENGTH_SHORT).show();
 
                 }
             });

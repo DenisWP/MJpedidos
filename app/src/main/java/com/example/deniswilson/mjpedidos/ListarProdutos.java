@@ -20,7 +20,7 @@ import java.net.URL;
 public class ListarProdutos extends AppCompatActivity {
 
     ListView listarProdutos;
-    String url = "http://192.168.0.103/mjpedidos/listar.php";
+    String url = "http://192.168.0.105/mjpedidos/listar.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

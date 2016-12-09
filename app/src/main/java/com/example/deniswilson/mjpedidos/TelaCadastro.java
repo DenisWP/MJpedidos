@@ -76,7 +76,7 @@ public class TelaCadastro extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(),"Preencha todos os campos !", Toast.LENGTH_LONG).show();
                     }else{
                         /*Montando a url, para realização da conexão*/
-                        url = "http://192.168.0.103/mjpedidos/cadastrar.php?nome=" + nomeC + "&senha=" + senhaC + "&telefone=" + telefoneC + "&longradouro=" + endereçoC +
+                        url = "http://192.168.0.105/mjpedidos/cadastrar.php?nome=" + nomeC + "&senha=" + senhaC + "&telefone=" + telefoneC + "&longradouro=" + endereçoC +
                                 "&numero=" + numeroC + "&bairro=" + bairroC + "&cidade=" + cidadeC + "&cep=" + cepC + "&email" + emailC;
 
 
