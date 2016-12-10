@@ -3,7 +3,9 @@ package com.example.deniswilson.mjpedidos;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -53,7 +55,7 @@ public class Parser extends AsyncTask <Void, Integer, Integer> {
         if(integer == 1)
         {
             //ADAPTER
-            ArrayAdapter<String> adapter=new ArrayAdapter<String>(context,android.R.layout.simple_list_item_1,players);
+            final ArrayAdapter<String> adapter=new ArrayAdapter<String>(context,android.R.layout.simple_list_item_1,players);
             //ADAPT TO LISTVIEW
             list.setAdapter(adapter);
             //LISTENET
@@ -62,11 +64,19 @@ public class Parser extends AsyncTask <Void, Integer, Integer> {
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     //Snackbar.make(view,players.get(position),Snackbar.LENGTH_SHORT).show();
 
+                    Intent irS = new Intent(context, Comprar.class);
+                    irS.putExtra("descritivo", players.get(position));
+                    context.startActivity(irS);
+
+
+
+
+
                 }
             });
         }else
         {
-            Toast.makeText(context,"Unable to Parse",Toast.LENGTH_SHORT).show();
+            Toast.makeText(context,"Erro",Toast.LENGTH_SHORT).show();
         }
         pd.dismiss();
     }
@@ -89,7 +99,7 @@ public class Parser extends AsyncTask <Void, Integer, Integer> {
                 jo=ja.getJSONObject(i);
                 //RETRIOEVE NAME
                 String name=jo.getString("nome_produto");
-                String valor=jo.getString("valor");
+                String valor=jo.getString("descritivo");
                 //ADD IT TO OUR ARRAYLIST
                 players.add(name +"\n"+ valor);
             }
