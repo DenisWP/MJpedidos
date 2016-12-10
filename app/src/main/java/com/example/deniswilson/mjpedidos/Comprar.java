@@ -33,10 +33,16 @@ public class Comprar extends AppCompatActivity {
 
         if (in != null && in.hasExtra("descritivo")){
             dados = in.getStringExtra("descritivo");
-            descrição.setText(dados);
+            //descrição.setText(dados);
+
+            Parser parser = new Parser(); // Chamando a classe, para pegar o código
+            String desc = parser.desc; // Pegando o que está na tabela.
+            descrição.setText(desc);
+
         }
 
         preço.setText("R$: 7,00");
+
 
 
     }

@@ -31,12 +31,18 @@ public class Parser extends AsyncTask <Void, Integer, Integer> {
     ArrayList<String> players=new ArrayList<>();
     ProgressDialog pd;
 
+    public static String desc;
+
 
     public Parser(Context context, String data, ListView list) {
         this.context = context;
         this.data = data;
         this.list = list;
     }
+
+    public Parser() {
+    }
+
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
@@ -99,7 +105,8 @@ public class Parser extends AsyncTask <Void, Integer, Integer> {
                 jo=ja.getJSONObject(i);
                 //RETRIOEVE NAME
                 String name=jo.getString("nome_produto");
-                String valor=jo.getString("descritivo");
+                String valor=jo.getString("valor");
+                desc = jo.getString("descritivo");
                 //ADD IT TO OUR ARRAYLIST
                 players.add(name +"\n"+ valor);
             }
