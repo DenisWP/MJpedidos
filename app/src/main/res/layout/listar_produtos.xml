@@ -18,7 +18,7 @@
         android:id="@+id/llprimeiro">
 
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="286dp"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
@@ -28,18 +28,6 @@
             android:id="@+id/edtPesquisar"
             android:hint="Pesquisar" />
 
-        <ImageButton
-            android:scaleType="fitCenter"
-            android:background="@null"
-            app:srcCompat="@mipmap/lupapesq"
-            android:layout_marginRight="36dp"
-            android:layout_marginEnd="36dp"
-            android:id="@+id/imgPesquisar"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
     </LinearLayout>
 
     <ListView
@@ -48,7 +36,20 @@
         android:layout_below="@+id/llprimeiro"
         android:layout_alignParentLeft="true"
         android:layout_marginTop="20dp"
-        android:id="@+id/lstProdutos" />
+        android:id="@+id/lstProdutos"
+        android:focusable="false"
+        android:listSelector="?attr/panelBackground" />
+
+    <ImageButton
+        android:scaleType="fitCenter"
+        android:background="@null"
+        app:srcCompat="@mipmap/lupapesq"
+        android:id="@+id/imgPesquisar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 
 </RelativeLayout>

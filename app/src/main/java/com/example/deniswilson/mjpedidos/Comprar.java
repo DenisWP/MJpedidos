@@ -21,6 +21,7 @@ public class Comprar extends AppCompatActivity {
 
     String url = "";
     String parametros = "";
+    Double valorPagar;
 
 
     @Override
@@ -45,16 +46,17 @@ public class Comprar extends AppCompatActivity {
             preço.setText(parser.desc);
         }
 
+       
 
-        calcular.setOnClickListener(new View.OnClickListener() {
+        /*calcular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Double pegaQuant = Double.parseDouble(quantidade.getText().toString());
-                Double valorPagar;
                 valorPagar = Double.parseDouble(parser.desc) * pegaQuant;
                 valorTotal.setText(String.valueOf(valorPagar));
             }
-        });
+        });*/
+
 
         solicitar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,7 +66,16 @@ public class Comprar extends AppCompatActivity {
                         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
 
                         if (networkInfo != null && networkInfo.isConnected()){
-                            String url = "http://192.168.0.104/mjpedidos/cadastrar.php?nome_cli=" +  + "&endereço_cli=" + ;
+
+                            Double pegaQuant = Double.parseDouble(quantidade.getText().toString());
+                            valorPagar = Double.parseDouble(parser.desc) * pegaQuant;
+                            valorTotal.setText(String.valueOf(valorPagar));
+
+
+                            String url = "http://192.168.0.104/mjpedidos/solicitar.php?nome_cli=denis&endereco_cli=teste";
+
+
+                            //String url = "http://192.168.0.104/mjpedidos/cadastrar.php?nome_cli=" + valorPagar + "&endereco_cli=teste";
 
                             new Dados().execute(url);
 
