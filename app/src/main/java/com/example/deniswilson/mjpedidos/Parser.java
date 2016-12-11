@@ -62,16 +62,16 @@ public class Parser extends AsyncTask <Void, Integer, Integer> {
         {
             //ADAPTER
             final ArrayAdapter<String> adapter=new ArrayAdapter<String>(context,android.R.layout.simple_list_item_1,players);
-            //ADAPT TO LISTVIEW
+            //Setando o adapter no listview criado ...
             list.setAdapter(adapter);
-            //LISTENET
+            //Evento para abrir outra activity para informações de solicitação ...
             list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    //Snackbar.make(view,players.get(position),Snackbar.LENGTH_SHORT).show();
+
 
                     Intent irS = new Intent(context, Comprar.class);
-                    irS.putExtra("descritivo", players.get(position));
+                    irS.putExtra("produtos", players.get(position));
                     context.startActivity(irS);
 
 
@@ -89,26 +89,31 @@ public class Parser extends AsyncTask <Void, Integer, Integer> {
 
 
 
-    //PARSE RECEIVED DATA
+    //Função para ler o JSON
     private int parse()
     {
         try
         {
-            //ADD THAT DATA TO JSON ARRAY FIRST
+           //Criando o objeto...
             JSONArray ja=new JSONArray(data);
-            //CREATE JO OBJ TO HOLD A SINGLE ITEM
             JSONObject jo=null;
             players.clear();
-            //LOOP THRU ARRAY
+
+            //Loop criado para percorrer o array.
+
             for(int i=0;i<ja.length();i++)
             {
                 jo=ja.getJSONObject(i);
-                //RETRIOEVE NAME
+                //Imprimindo o nome o valor no listview
                 String name=jo.getString("nome_produto");
                 String valor=jo.getString("valor");
-                desc = jo.getString("descritivo");
+                String descrição = jo.getString("descritivo");
+
+                desc = jo.getString("valor");
+
+
                 //ADD IT TO OUR ARRAYLIST
-                players.add(name +"\n"+ valor);
+                players.add(name +"\n"+ valor + "\n" + descrição);
             }
             return 1;
         } catch (JSONException e) {
