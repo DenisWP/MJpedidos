@@ -112,8 +112,10 @@ public class Parser extends AsyncTask <Void, Integer, Integer> {
                 desc = jo.getString("valor");
 
 
-                //ADD IT TO OUR ARRAYLIST
-                players.add(name +"\n"+ valor + "\n" + descrição);
+                //Adicionando o arraylist no listview
+                 //players.add("Nome do Produto: " + name + "\nPreço: " + valor + "\n" + descrição);
+
+                 players.add(name +" | "+ valor + " | " + descrição);
             }
             return 1;
         } catch (JSONException e) {

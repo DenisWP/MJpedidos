@@ -63,16 +63,15 @@ public class Comprar extends AppCompatActivity {
                         getSystemService(Context.CONNECTIVITY_SERVICE);
                         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
 
+                        Login log = new Login();
+
                         if (networkInfo != null && networkInfo.isConnected()){
 
                             Double pegaQuant = Double.parseDouble(quantidade.getText().toString());
                             valorPagar = Double.parseDouble(parser.desc) * pegaQuant;
                             valorTotal.setText(String.valueOf(valorPagar));
 
-                            //String url = "http://192.168.0.104/mjpedidos/solicitar.php?nome_cli=denis&endereco_cli=teste";
-
-
-                            String url = "http://192.168.0.104/mjpedidos/solicitar.php?nome_cli=" + valorPagar + "&endereco_cli=" + pegaQuant;
+                            String url = "http://192.168.0.104/mjpedidos/solicitar.php?nome_cli=" + log.nome_cli + "&valor=" + valorPagar + "&quantidade=" + pegaQuant + "&produto=" + in.getStringExtra("produtos");
 
                             new Dados().execute(url);
 

@@ -24,6 +24,8 @@ public class Login extends AppCompatActivity {
     String url = "";
     String parametros = "";
 
+    public static String nome_cli;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +57,8 @@ public class Login extends AppCompatActivity {
                     String usuario = edtUsuario.getText().toString();
                     String senha = edtSenha.getText().toString();
 
+                    nome_cli = usuario;
+
                     if (usuario.isEmpty() || senha.isEmpty()){
                         Toast.makeText(getApplicationContext(),"Preencha todos os campos !", Toast.LENGTH_LONG).show();
                     }else{
@@ -65,6 +69,7 @@ public class Login extends AppCompatActivity {
                        // Toast.makeText(getApplicationContext(),"->" +url+ "" +parametros, Toast.LENGTH_LONG).show();
 
                         new Dados().execute(url);
+
                     }
                 } else {
                     Toast.makeText(getApplicationContext(),"Não há conexão !", Toast.LENGTH_LONG).show();
