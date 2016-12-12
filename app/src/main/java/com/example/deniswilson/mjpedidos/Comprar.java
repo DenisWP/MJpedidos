@@ -33,11 +33,11 @@ public class Comprar extends AppCompatActivity {
         descrição = (TextView) findViewById(R.id.txvDescricao);
         preço = (TextView) findViewById(R.id.txvPreco);
         valorTotal = (TextView) findViewById(R.id.txvValorTotal);
-        calcular = (Button) findViewById(R.id.bCalcular);
+        //calcular = (Button) findViewById(R.id.bCalcular);
         solicitar = (Button) findViewById(R.id.bSolicitar);
 
-        final String dados, vt;
-        Intent in = getIntent();
+        final String dados;
+        final Intent in = getIntent();
         final Parser parser = new Parser(); // Chamando a classe, para pegar o código
 
         if (in != null && in.hasExtra("produtos")){
@@ -45,8 +45,6 @@ public class Comprar extends AppCompatActivity {
             descrição.setText(dados);
             preço.setText(parser.desc);
         }
-
-       
 
         /*calcular.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,11 +69,10 @@ public class Comprar extends AppCompatActivity {
                             valorPagar = Double.parseDouble(parser.desc) * pegaQuant;
                             valorTotal.setText(String.valueOf(valorPagar));
 
+                            //String url = "http://192.168.0.104/mjpedidos/solicitar.php?nome_cli=denis&endereco_cli=teste";
 
-                            String url = "http://192.168.0.104/mjpedidos/solicitar.php?nome_cli=denis&endereco_cli=teste";
 
-
-                            //String url = "http://192.168.0.104/mjpedidos/cadastrar.php?nome_cli=" + valorPagar + "&endereco_cli=teste";
+                            String url = "http://192.168.0.104/mjpedidos/solicitar.php?nome_cli=" + valorPagar + "&endereco_cli=" + pegaQuant;
 
                             new Dados().execute(url);
 

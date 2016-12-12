@@ -37,8 +37,7 @@
         android:layout_alignParentLeft="true"
         android:layout_marginTop="20dp"
         android:id="@+id/lstProdutos"
-        android:focusable="false"
-        android:listSelector="?attr/panelBackground" />
+        android:focusable="false"/>
 
     <ImageButton
         android:scaleType="fitCenter"

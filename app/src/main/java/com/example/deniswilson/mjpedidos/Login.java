@@ -91,7 +91,6 @@ public class Login extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Usuário ou senha incorretos !", Toast.LENGTH_LONG).show();
             }
         }
-
     }
 
         @Override

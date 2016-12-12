@@ -11,14 +11,17 @@
     tools:context="com.example.deniswilson.mjpedidos.Comprar">
 
     <TextView
-        android:text="TextView"
+        android:text="As melhores quitandas caseiras para você saborear !"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:id="@+id/txvDescricao"
+        android:layout_marginTop="5dp"
+        android:id="@+id/txvInfor"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:gravity="center"
+        android:textSize="18dp"
+        android:textColor="?attr/colorPrimaryDark" />
 
 
     <LinearLayout
@@ -38,7 +41,9 @@
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_marginTop="25dp"
-            android:id="@+id/Valortxv" />
+            android:id="@+id/Valortxv"
+            android:textSize="17dp"
+            android:textColor="@color/colorPrimaryDark" />
 
         <TextView
             android:text="Preço aparecer aqui ..."
@@ -49,6 +54,50 @@
 
     </LinearLayout>
 
+    <TextView
+        android:text="Preço"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txvValorTotal"
+        android:layout_below="@+id/edtQquantidade"
+        android:layout_marginTop="44dp"
+        android:layout_toRightOf="@+id/textView"
+        android:layout_toEndOf="@+id/textView"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="17dp" />
+
+    <Button
+        android:text="Solicitar Entrega"
+        android:layout_width="300dp"
+        android:layout_marginBottom="52dp"
+        android:id="@+id/bSolicitar"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_height="70dp" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:id="@+id/txvDescricao"
+        android:textSize="17dp"
+        android:layout_below="@+id/txvInfor"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="@android:color/holo_red_dark" />
+
+    <TextView
+        android:text="Quantos você quer ?"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/llvalor"
+        android:layout_alignStart="@+id/llvalor"
+        android:id="@+id/textView"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="17dp" />
+
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -56,40 +105,22 @@
         android:ems="10"
         android:id="@+id/edtQquantidade"
         android:hint="Quantidade"
-        android:layout_below="@+id/llvalor"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="46dp" />
-
-    <Button
-        android:text="Calcular Valor"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/bCalcular"
-        android:layout_below="@+id/edtQquantidade"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="17dp" />
-
-    <Button
-        android:text="Solicitar Entrega"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="52dp"
-        android:id="@+id/bSolicitar"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/textView"
+        android:layout_toEndOf="@+id/textView"
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp" />
 
     <TextView
-        android:text="TextView"
-        android:layout_width="match_parent"
+        android:text="Valor total: "
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/txvValorTotal"
-        android:layout_above="@+id/bSolicitar"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="29dp" />
+        android:layout_alignBottom="@+id/txvValorTotal"
+        android:layout_alignLeft="@+id/bSolicitar"
+        android:layout_alignStart="@+id/bSolicitar"
+        android:id="@+id/textView2"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="17dp" />
 
 
 </RelativeLayout>
