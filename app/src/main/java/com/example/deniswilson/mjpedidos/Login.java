@@ -1,10 +1,14 @@
 package com.example.deniswilson.mjpedidos;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.AsyncTask;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,7 +23,7 @@ public class Login extends AppCompatActivity {
 
     EditText edtUsuario, edtSenha;
     Button btnEntrar;
-    TextView txvCriar;
+    TextView txvCriar, txvFale;
 
     String url = "";
     String parametros = "";
@@ -35,6 +39,16 @@ public class Login extends AppCompatActivity {
         edtSenha = (EditText) findViewById(R.id.edtSenha);
         btnEntrar = (Button) findViewById(R.id.btnEntrar);
         txvCriar = (TextView) findViewById(R.id.txvCriar);
+        txvFale = (TextView) findViewById(R.id.txvFale);
+
+        txvFale.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Uri uri = Uri.parse("tel: 0319999999");
+                Intent intent = new Intent(Intent.ACTION_CALL, uri);
+                startActivity(intent);
+            }
+        });
 
         txvCriar.setOnClickListener(new View.OnClickListener() {
             @Override

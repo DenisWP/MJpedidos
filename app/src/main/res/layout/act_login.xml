@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/act_login"
     android:layout_width="match_parent"
@@ -12,6 +13,13 @@
     android:orientation="vertical"
     android:gravity="center"
     android:background="#F0FFF0">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ped"
+        android:id="@+id/imageView2" />
 
     <EditText
         android:layout_width="match_parent"
@@ -48,5 +56,16 @@
         android:layout_height="30dp"
         android:textSize="17dp"
         android:textColor="@android:color/black" />
+
+    <TextView
+        android:text="Clique aqui, e fale conosco !"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txvFale"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="17dp"
+        android:gravity="center"
+        android:layout_below="@+id/txvCriar"
+        android:layout_marginTop="100dp"/>
 
 </LinearLayout>

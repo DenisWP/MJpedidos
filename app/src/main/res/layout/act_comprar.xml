@@ -101,7 +101,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:ems="10"
         android:id="@+id/edtQquantidade"
         android:hint="Quantidade"
@@ -109,7 +109,7 @@
         android:layout_toRightOf="@+id/textView"
         android:layout_toEndOf="@+id/textView"
         android:layout_marginLeft="24dp"
-        android:layout_marginStart="24dp" />
+        android:layout_marginStart="24dp"/>
 
     <TextView
         android:text="Valor total: "
